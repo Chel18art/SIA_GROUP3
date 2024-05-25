@@ -17,5 +17,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/get-plant', 'PlantController@getPlant');
-
+$router->get('/news', 'GatewayController@getNews');
+$router->post('/google-search', 'GatewayController@googleSearch');
+$router->get('/weather', 'GatewayController@getCurrentWeather');
+// routes/web.php
+$router->get('/quote', 'GatewayController@getRandomQuote');
