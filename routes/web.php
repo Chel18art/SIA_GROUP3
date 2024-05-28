@@ -17,8 +17,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/news', 'GatewayController@getNews');
-$router->post('/google-search', 'GatewayController@googleSearch');
-$router->get('/weather', 'GatewayController@getCurrentWeather');
-// routes/web.php
-$router->get('/quote', 'GatewayController@getRandomQuote');
+$router->get('/dashboard', function () {
+    return file_get_contents(__DIR__ . '/../public/index.html');
+});
+
+$router->get('/all-data', 'GatewayController@getAllData');
